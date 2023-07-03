@@ -1,17 +1,11 @@
 class Student < ApplicationRecord
-    belongs_to :course
-    belongs_to :instructor
+    has_many :enrollments
+    has_many :courses, through: :enrollments
   
-    # Add additional attributes or validations 
+    has_secure_password
+  
     validates :name, presence: true
-    validates :grades, presence: true
-  
-    def technical_mentor_name
-      instructor.name if instructor
-    end
-  
-    def technical_mentor_email
-      instructor.email if instructor
-    end
+    validates :email, presence: true, uniqueness: true
+    validates :password, presence: true, length: { minimum: 6 }
   end
   
