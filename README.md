@@ -1,5 +1,3 @@
-# Putting it All Together: Rails CRUD
-
 ## Portal-App
 
 
