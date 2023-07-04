@@ -1,3 +1,5 @@
 class InstructorSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :name, :email
+  has_many :students
+  has_many :courses
 end
